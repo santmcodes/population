@@ -31,7 +31,7 @@ avg=calculate.avg(males)
 print(f"Average number of males Age is {avg}")
 med=calculate.median(males)
 print(f"Median of males Age is {med}")
-mod=calculate.mode([1,2,3,3,3,3,4,5,6,6,6,6,6,9])
+mod=calculate.mode(males)
 print(f"Mode of males Age is {mod}")
   
 #report.drawBarChart(county,males,"Male population in different Counties",\
