@@ -23,3 +23,30 @@ def median(data):
     else:
         median = sum(data[midIndex-1:midIndex+1])/2
     return median
+
+def getMaximumValue(value):
+    frequencyValues=list(value.values())
+    maxVal=max(frequencyValues)
+    return maxVal
+
+def getMaxValIndex(valueFrequency,maxValue):
+    maxIndex=0
+    for v in valueFrequency:
+        if (valueFrequency[v]==maxValue):
+            maxIndex=v
+            break
+    return maxIndex
+
+def mode(data):
+    data=sorted(data)
+    valueFrequency={}
+    for i in data:
+        if i in list(valueFrequency.keys()):
+            valueFrequency[i]=valueFrequency[i]+1
+        else:
+            valueFrequency[i]=1
+            
+    maxValue=getMaximumValue(valueFrequency)
+    maxValueIndex=getMaxValIndex(valueFrequency,maxValue)
+    
+    return maxValueIndex
