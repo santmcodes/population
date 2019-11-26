@@ -27,12 +27,12 @@ for i in genderDistribution:
     males.append(i[2])
     populationPerCounty[i[0]]=i[1]+i[2]
     fertilityRatePerCounty[i[0]]=i[3]
-avg=calculate.avg(males)
-print(f"Average number of males Age is {avg}")
-med=calculate.median(males)
+#avg=calculate.avg(males)
+#print(f"Average number of males Age is {avg}")
+med=calculate.median([10,20,30,40,10,20,30,30,30,10])
 print(f"Median of males Age is {med}")
-mod=calculate.mode(males)
-print(f"Mode of males Age is {mod}")
+#mod=calculate.mode(males)
+#print(f"Mode of males Age is {mod}")
   
 #report.drawBarChart(county,males,"Male population in different Counties",\
 #                    "Counties","No. of Males")

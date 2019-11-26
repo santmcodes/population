@@ -16,10 +16,11 @@ def avg(data):
 
 
 def median(data):
+    data.sort()
     median=0
     midIndex=int(len(data)/2)
     if(midIndex % 2 == 1):
-        median = midIndex
+        median = data[midIndex]
     else:
         median = sum(data[midIndex-1:midIndex+1])/2
     return median

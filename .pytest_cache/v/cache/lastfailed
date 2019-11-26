@@ -1,4 +1,4 @@
 {
   "source/test_calculator_functions.py": true,
-  "test/test_calculator_function.py": true
+  "test/test_calculator_function.py::test_median": true
 }
