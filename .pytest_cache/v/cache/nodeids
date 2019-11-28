@@ -1,5 +1,6 @@
 [
   "test/test_calculator_function.py::test_avg",
   "test/test_calculator_function.py::test_median",
-  "test/test_calculator_function.py::test_mode"
+  "test/test_calculator_function.py::test_mode",
+  "test/test_calculator_function.py::test_std_deviations"
 ]

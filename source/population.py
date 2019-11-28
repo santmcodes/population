@@ -31,6 +31,8 @@ for i in genderDistribution:
 #print(f"Average number of males Age is {avg}")
 med=calculate.median([10,20,30,40,10,20,30,30,30,10])
 print(f"Median of males Age is {med}")
+std=calculate.std_deviations([10,20,30,40,10,20,30,30,30,10])
+print(f"Std of males Age is {std}")
 #mod=calculate.mode(males)
 #print(f"Mode of males Age is {mod}")
   

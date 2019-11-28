@@ -4,6 +4,8 @@ Created on Mon Nov 18 12:20:01 2019
 
 @author:Santosh Mishra
 """
+from math import sqrt
+
 def avg(data):
     try:
         total=0
@@ -51,3 +53,11 @@ def mode(data):
     maxValueIndex=getMaxValIndex(valueFrequency,maxValue)
     
     return maxValueIndex
+
+def std_deviations(data):
+    data = [ float(x) for x in data ]
+    mean=avg(data)
+    deviations=[ (x - mean) ** 2 for x in data ]
+    std_dev=sqrt(sum(deviations)/len(data)-1)
+    
+    return std_dev
