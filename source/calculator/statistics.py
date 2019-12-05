@@ -20,39 +20,38 @@ def avg(data):
 def median(data):
     data.sort()
     median=0
-    midIndex=int(len(data)/2)
-    if(midIndex % 2 == 1):
-        median = data[midIndex]
+    mid_index=int(len(data)/2)
+    if(mid_index % 2 == 1):
+        median = data[mid_index]
     else:
-        median = sum(data[midIndex-1:midIndex+1])/2
+        median = sum(data[mid_index-1:mid_index+1])/2
     return median
 
 def getMaximumValue(value):
-    frequencyValues=list(value.values())
-    maxVal=max(frequencyValues)
-    return maxVal
+    frequency_values=list(value.values())
+    return max(frequency_values)
 
-def getMaxValIndex(valueFrequency,maxValue):
-    maxIndex=0
-    for v in valueFrequency:
-        if (valueFrequency[v]==maxValue):
-            maxIndex=v
+def getMaxValIndex(value_frequency,max_value):
+    max_index=0
+    for v in value_frequency:
+        if (value_frequency[v]==max_value):
+            max_index=v
             break
-    return maxIndex
+    return max_index
 
 def mode(data):
     data=sorted(data)
-    valueFrequency={}
+    value_frequency={}
     for i in data:
-        if i in list(valueFrequency.keys()):
-            valueFrequency[i]=valueFrequency[i]+1
+        if i in list(value_frequency.keys()):
+            value_frequency[i]=value_frequency[i]+1
         else:
-            valueFrequency[i]=1
+            value_frequency[i]=1
             
-    maxValue=getMaximumValue(valueFrequency)
-    maxValueIndex=getMaxValIndex(valueFrequency,maxValue)
+    max_value=getMaximumValue(value_frequency)
+    max_value_index=getMaxValIndex(value_frequency,max_value)
     
-    return maxValueIndex
+    return float(max_value_index)
 
 def std_deviations(data):
     data = [ float(x) for x in data ]
@@ -61,3 +60,23 @@ def std_deviations(data):
     std_dev=sqrt(sum(deviations)/len(data)-1)
     
     return std_dev
+
+def deviations(data):
+    data = [ float(x) for x in data ]
+    mean=avg(data)
+    deviations=[ (x - mean) ** 2 for x in data ]
+
+    return deviations
+
+def countywise_aggregate(data,index):
+    aggregate_data={} 
+    for d in data:
+        if (d[0] not in aggregate_data.keys()):
+            aggregate_data[d[0]]=d[index]
+    return aggregate_data
+
+def stats(data):
+    return [format(avg(data),'.6'),
+            format(median(data),'.6'),
+            format(mode(data),'.6'),
+            format(std_deviations(data),'.6')]

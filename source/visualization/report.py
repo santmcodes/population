@@ -8,26 +8,27 @@ This is a temporary script file.
 """
 import matplotlib.pyplot as plt
 
-def drawBarChart(dataX,dataY,title,xlabel,ylabel):
-    fig,ax=plt.subplots(figsize=(85,10))
+def draw_line_chart(dataX,dataY,dataZ,title,xlabel,ylabel):
+    fig,ax=plt.subplots(figsize=(55,20))
     fig.align_labels()
-    #ax.set_xlim([0,0])
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)   
     ax.plot(dataX,dataY)
+    ax.plot(dataX,dataZ)
+    plt.legend()
     publish()
     fig.savefig("male_dist.png",bbox_inches="tight")
     
-def drawPieChart(dataN,title):
-    fig,ax=plt.subplots(figsize=(85,20))
+def draw_pie_chart(dataN,title):
+    fig,ax=plt.subplots(figsize=(20,20))
     fig.align_labels()
     ax.set_title(title)
     ax.pie(dataN.values(),labels=dataN.keys())
     publish()
     fig.savefig("male_dist_pie.png",bbox_inches="tight")
     
-def drawHorizontalBarChart(dataN,title,xlabel,ylabel):
+def draw_horizontal_bar_chart(dataN,title,xlabel,ylabel):
     fig,ax=plt.subplots(figsize=(85,10))
     ax.set_title(title)   
     y_pos=list(range(len(dataN)))    

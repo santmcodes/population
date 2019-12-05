@@ -2,44 +2,100 @@
 #!/usr/bin/python
 
 """
-Spyder Editor
+###############################################################################
 
-This is a temporary script file.
+Applied Scripting language Assignment
+-------------------------------------
+Author : Santosh Mishra(A00278085)
+Subject :Population Study
+Description : This program presents statistical analysis of a population study
+
+###############################################################################
 """
 
 import dbhelper
+import transform
 import visualization.report as report
 import calculator.statistics as calculate
-# CSV interaction TBD:
-query='select county_ud,count(male) as males,count(female) as females, \
-count(fert_r) as fr from mytable group by county_ud' 
+from prettytable import PrettyTable
+
+header = """################################################################### 
+
+Scripting language Assignment 
+-------------------------------------
+Author      : A00278085
+Subject     :Population Study
+Description : This program presents statistical analysis of a population study.
+Disclaimer  : The source data used in the analysis and reports has been taken from
+https://data.gov.ie/dataset/all-island-population-sa/resource/09abb272-a52a-4149-b8fc-9013d846594e?inner_span=True
+All reports produced here are only for learning purpose.
+
+###############################################################################
+"""
+def end_message():
+    message = """
+     ##########################################################################
+     #                                                                        # 
+     #Thank you for using this software - visit again                         #
+     #A special thank you to Cormac McClean who coached me python from scratch#
+     ###############################  Bye !  ##################################"""
+    print(message)
+       
+print(header)
+
+# Collecting data from postgress database
+query='select county_ud,male as males,female as females, \
+fert_r as fr from mytable' 
 #query='select male,female,county_ud from mytable group by county_ud,male,female'
-genderDistribution=dbhelper.connect(query)
+gender_distribution=dbhelper.connect(query)
+
+countywise_males=calculate.countywise_aggregate(gender_distribution,1) 
+countywise_females=calculate.countywise_aggregate(gender_distribution,2) 
+
+  
+# Data initialization 
 
 populationPerCounty={}
 fertilityRatePerCounty={}
-males=[]
-county=[]
-females=[]
-for i in genderDistribution:
-    county.append(i[0])
-    females.append(i[1])
-    males.append(i[2])
+males=transform.to_list_of_int(list(countywise_males.values()))
+county=list(countywise_males.keys())
+females=transform.to_list_of_int(list(countywise_females.values()))
+
+
+for i in gender_distribution:
     populationPerCounty[i[0]]=i[1]+i[2]
     fertilityRatePerCounty[i[0]]=i[3]
-#avg=calculate.avg(males)
-#print(f"Average number of males Age is {avg}")
-med=calculate.median([10,20,30,40,10,20,30,30,30,10])
-print(f"Median of males Age is {med}")
-std=calculate.std_deviations([10,20,30,40,10,20,30,30,30,10])
-print(f"Std of males Age is {std}")
-#mod=calculate.mode(males)
-#print(f"Mode of males Age is {mod}")
-  
-#report.drawBarChart(county,males,"Male population in different Counties",\
-#                    "Counties","No. of Males")
-#report.drawPieChart(populationPerCounty,"Population in different Counties")    
-#report.drawHorizontalBarChart(populationPerCounty,"Population in differnt \
+
+# presenting and collecting users choice
+print("a) Gender Distribution in Counties")
+while(True):
+    choice=input("Enter what would you like to know or  q to quit : ")
+    if (choice== 'q'):
+        break
+    else:
+        if (choice == 'a'):
+            print("General Stats ")
+            tbl=PrettyTable()
+            tbl.add_column('Statistics',['Mean','Median','Mode',
+                                         'Standard Deviation'])
+            tbl.add_column('Males',calculate.stats(males))
+            tbl.add_column('Females',calculate.stats(females))
+            print(tbl)
+#            report.draw_pie_chart(countywise_males,"Males in different Counties")
+            report.draw_line_chart(county,males,females,"Male population in different Counties",\
+                    "Counties","No. of Males")
+#            report.draw_horizontal_bar_chart(transform.to_numericvalue_dict(countywise_males)," Males in differnt \
 #                              counties","Population","Counties")
-#report.drawBoxPlot(fertilityRatePerCounty,"Population in differnt \
+#            report.drawBoxPlot(countywise_males,"Population in differnt \
 #                              counties","Population")
+end_message()            
+# TODO: CSV interaction TBD:
+
+
+
+            
+            
+
+
+
+    

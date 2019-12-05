@@ -2,7 +2,7 @@
 """
 Created on Mon Nov  4 17:55:12 2019
 
-@author:Santosh Mishra
+@author:Santosh Mishra(A00278085)
 """
 import psycopg2
 from config.dbconfig import datasource
