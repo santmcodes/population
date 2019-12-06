@@ -8,25 +8,30 @@ This is a temporary script file.
 """
 import matplotlib.pyplot as plt
 
-def draw_line_chart(dataX,dataY,dataZ,title,xlabel,ylabel):
+def publish():
+    plt.tight_layout()
+    plt.show()
+    
+def draw_line_chart(dataX,dataY,dataZ,title,xlabel,ylabel,legend_label):
     fig,ax=plt.subplots(figsize=(55,20))
     fig.align_labels()
     ax.set_title(title)
     ax.set_xlabel(xlabel)
-    ax.set_ylabel(ylabel)   
-    ax.plot(dataX,dataY)
-    ax.plot(dataX,dataZ)
-    plt.legend()
+    ax.set_ylabel(ylabel)
+    ax.plot(dataX,dataY,label=legend_label[0])
+    ax.plot(dataX,dataZ,label=legend_label[1])
+    ax.legend()
     publish()
-    fig.savefig("male_dist.png",bbox_inches="tight")
+    fig.savefig(title + ".png",bbox_inches="tight")
     
 def draw_pie_chart(dataN,title):
     fig,ax=plt.subplots(figsize=(20,20))
     fig.align_labels()
     ax.set_title(title)
     ax.pie(dataN.values(),labels=dataN.keys())
+    ax.legend()
     publish()
-    fig.savefig("male_dist_pie.png",bbox_inches="tight")
+    fig.savefig(title +".png",bbox_inches="tight")
     
 def draw_horizontal_bar_chart(dataN,title,xlabel,ylabel):
     fig,ax=plt.subplots(figsize=(85,10))
@@ -39,7 +44,9 @@ def draw_horizontal_bar_chart(dataN,title,xlabel,ylabel):
     ax.set_xlabel(xlabel)
     
     ax.barh(y_pos,dataN.values(),align="center")
+    ax.legend()
     publish()
+    fig.savefig(title +".png",bbox_inches="tight")
      
 def drawBoxPlot(dataN,title,ylabel):
     fig,ax=plt.subplots(figsize=(85,10))
@@ -47,9 +54,8 @@ def drawBoxPlot(dataN,title,ylabel):
     ax.set_ylabel(ylabel)
     ax.boxplot(dataN.values(),showfliers=False,vert=False,\
                labels=dataN.keys())
+    ax.legend()
     publish()
+    fig.savefig(title +".png",bbox_inches="tight")
 
-def publish():
-#   fig = plt.figure(tight_layout=True)
-    plt.tight_layout()
-    plt.show()
+

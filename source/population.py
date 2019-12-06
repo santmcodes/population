@@ -46,7 +46,6 @@ print(header)
 # Collecting data from postgress database
 query='select county_ud,male as males,female as females, \
 fert_r as fr from mytable' 
-#query='select male,female,county_ud from mytable group by county_ud,male,female'
 gender_distribution=dbhelper.connect(query)
 
 countywise_males=calculate.countywise_aggregate(gender_distribution,1) 
@@ -82,8 +81,9 @@ while(True):
             tbl.add_column('Females',calculate.stats(females))
             print(tbl)
 #            report.draw_pie_chart(countywise_males,"Males in different Counties")
-            report.draw_line_chart(county,males,females,"Male population in different Counties",\
-                    "Counties","No. of Males")
+            legend_labels=["Males","Females"]
+            report.draw_line_chart(county,males,females,"Gender distribution in different Counties",\
+                    "Counties","No. of Population", legend_labels)
 #            report.draw_horizontal_bar_chart(transform.to_numericvalue_dict(countywise_males)," Males in differnt \
 #                              counties","Population","Counties")
 #            report.drawBoxPlot(countywise_males,"Population in differnt \
