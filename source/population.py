@@ -8,8 +8,9 @@ Applied Scripting language Assignment
 -------------------------------------
 Author : Santosh Mishra(A00278085)
 Subject :Population Study
-Description : This program presents statistical analysis of a population study
-
+Description : This program presents statistical analysis on a population data
+This file in particular is main controller class that initiated the requests and
+interacts other components 
 ###############################################################################
 """
 
@@ -48,19 +49,16 @@ query='select county_ud,male as males,female as females, \
 fert_r as fr from mytable' 
 gender_distribution=dbhelper.connect(query)
 
+# Data initialization and transfprmations
 countywise_males=calculate.countywise_aggregate(gender_distribution,1) 
 countywise_females=calculate.countywise_aggregate(gender_distribution,2) 
 
-  
-# Data initialization 
-
-populationPerCounty={}
-fertilityRatePerCounty={}
 males=transform.to_list_of_int(list(countywise_males.values()))
 county=list(countywise_males.keys())
 females=transform.to_list_of_int(list(countywise_females.values()))
 
-
+populationPerCounty={}
+fertilityRatePerCounty={}
 for i in gender_distribution:
     populationPerCounty[i[0]]=i[1]+i[2]
     fertilityRatePerCounty[i[0]]=i[3]
@@ -80,12 +78,12 @@ while(True):
             tbl.add_column('Males',calculate.stats(males))
             tbl.add_column('Females',calculate.stats(females))
             print(tbl)
-#            report.draw_pie_chart(countywise_males,"Males in different Counties")
+            report.draw_pie_chart(countywise_males,"Males in different Counties")
             legend_labels=["Males","Females"]
             report.draw_line_chart(county,males,females,"Gender distribution in different Counties",\
                     "Counties","No. of Population", legend_labels)
-#            report.draw_horizontal_bar_chart(transform.to_numericvalue_dict(countywise_males)," Males in differnt \
-#                              counties","Population","Counties")
+            report.draw_horizontal_bar_chart(transform.to_numericvalue_dict(countywise_males)," Males in differnt \
+                              counties","Population","Counties")
 #            report.drawBoxPlot(countywise_males,"Population in differnt \
 #                              counties","Population")
 end_message()            

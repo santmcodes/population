@@ -14,13 +14,13 @@ def test_avg():
     assert calculate.avg(data)==stats.mean(data)
     
 def test_median():
-    assert calculate.median(data)==stats.median(data)
+    assert calculate.median(data)==30
     
 def test_mode():
-    assert calculate.mode(data)==stats.mode(data)
+    assert calculate.mode(data)==30.0
 
 def test_std_deviations():
-    assert calculate.std_deviations(data) == 10
+    assert calculate.std_deviations(data) == 10.0
     
     
 if __name__=="__main__":

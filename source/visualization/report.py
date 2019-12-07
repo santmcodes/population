@@ -7,11 +7,13 @@ Spyder Editor
 This is a temporary script file.
 """
 import matplotlib.pyplot as plt
+import os
 
-def publish():
+def publish(fig,title):
     plt.tight_layout()
     plt.show()
-    
+    fig.savefig(os.path.realpath('.') + "\\..\\"+ "outputreport\\"+title + ".png",bbox_inches="tight")
+
 def draw_line_chart(dataX,dataY,dataZ,title,xlabel,ylabel,legend_label):
     fig,ax=plt.subplots(figsize=(55,20))
     fig.align_labels()
@@ -21,8 +23,7 @@ def draw_line_chart(dataX,dataY,dataZ,title,xlabel,ylabel,legend_label):
     ax.plot(dataX,dataY,label=legend_label[0])
     ax.plot(dataX,dataZ,label=legend_label[1])
     ax.legend()
-    publish()
-    fig.savefig(title + ".png",bbox_inches="tight")
+    publish(fig,title)
     
 def draw_pie_chart(dataN,title):
     fig,ax=plt.subplots(figsize=(20,20))
@@ -30,8 +31,7 @@ def draw_pie_chart(dataN,title):
     ax.set_title(title)
     ax.pie(dataN.values(),labels=dataN.keys())
     ax.legend()
-    publish()
-    fig.savefig(title +".png",bbox_inches="tight")
+    publish(fig,title)
     
 def draw_horizontal_bar_chart(dataN,title,xlabel,ylabel):
     fig,ax=plt.subplots(figsize=(85,10))
@@ -45,8 +45,7 @@ def draw_horizontal_bar_chart(dataN,title,xlabel,ylabel):
     
     ax.barh(y_pos,dataN.values(),align="center")
     ax.legend()
-    publish()
-    fig.savefig(title +".png",bbox_inches="tight")
+    publish(fig,title)
      
 def drawBoxPlot(dataN,title,ylabel):
     fig,ax=plt.subplots(figsize=(85,10))
@@ -55,7 +54,6 @@ def drawBoxPlot(dataN,title,ylabel):
     ax.boxplot(dataN.values(),showfliers=False,vert=False,\
                labels=dataN.keys())
     ax.legend()
-    publish()
-    fig.savefig(title +".png",bbox_inches="tight")
+    publish(fig,title)
 
 

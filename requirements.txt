@@ -6,3 +6,7 @@ Created on Mon Nov  4 17:07:40 2019
 """
 
 https://data.gov.ie/dataset/all-island-population-sa/resource/09abb272-a52a-4149-b8fc-9013d846594e?inner_span=True 
+
+
+# to test run
+ pytest $(pwd)\\..\\test\\test_calculator_function.py
