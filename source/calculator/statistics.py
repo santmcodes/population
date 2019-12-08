@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
 """
+###############################################################################
+
+Database connector
+-------------------------------------
+Author : Santosh Mishra(A00278085)
 Created on Mon Nov 18 12:20:01 2019
 
-@author:Santosh Mishra
+Description : This code is responsible for all sort of calculations used in stats
+
+###############################################################################
 """
+
 from math import sqrt
 
 def avg(data):
