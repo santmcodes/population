@@ -18,6 +18,20 @@ from configparser import ConfigParser
   
 os.path.realpath('.') + "\\..\\"+ "config\database.ini"
 
+"""
+create datasource parser to DB after reading the config file
+
+Parameters
+----------
+filename : string, must
+    default is current
+
+Returns
+-------
+db : dictionary
+    key value pairs in config file.
+"""
+    
 def datasource(filename=os.path.realpath('.') + "\\..\\"+ "config\database.ini", section='postgresql'):
     # create a parser
     parser = ConfigParser()

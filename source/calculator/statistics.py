@@ -14,6 +14,18 @@ Description : This code is responsible for all sort of calculations used in stat
 
 from math import sqrt
 
+"""
+calculate average mean of passed data
+
+Parameters
+----------
+data : List, mandatory
+    
+Returns
+-------
+average : float
+    average mean of the passed data.
+"""
 def avg(data):
     try:
         total=0
@@ -25,6 +37,18 @@ def avg(data):
         print("please pass list of numbers")
 
 
+"""
+calculate median of passed data
+
+Parameters
+----------
+data : List, mandatory
+    
+Returns
+-------
+median : float
+    median of the passed data.
+"""
 def median(data):
     data.sort()
     median=0
@@ -35,10 +59,33 @@ def median(data):
         median = sum(data[mid_index-1:mid_index+1])/2
     return median
 
+"""
+calculate maximum value in a dictionary of passed data
+
+Parameters
+----------
+data : dictionary, mandatory
+    
+Returns
+-------
+maximm value : float or integer depending on passed value
+"""
 def getMaximumValue(value):
     frequency_values=list(value.values())
     return max(frequency_values)
 
+"""
+calculate index maximum value in a dictionary of passed data
+
+Parameters
+----------
+data : dictionary, mandatory
+maximum value :  float/ int
+    
+Returns
+-------
+index of maximm value : integer 
+"""
 def getMaxValIndex(value_frequency,max_value):
     max_index=0
     for v in value_frequency:
@@ -47,6 +94,19 @@ def getMaxValIndex(value_frequency,max_value):
             break
     return max_index
 
+
+"""
+calculate mode of passed data
+
+Parameters
+----------
+data : List, mandatory
+    
+Returns
+-------
+mdoe : float
+    mode of the passed data.
+"""
 def mode(data):
     data=sorted(data)
     value_frequency={}
@@ -61,6 +121,18 @@ def mode(data):
     
     return float(max_value_index)
 
+"""
+calculate Standard deviation of passed data
+
+Parameters
+----------
+data : List, mandatory
+    
+Returns
+-------
+Standard deviation : float
+    standard deviation of the passed data.
+"""
 def std_deviations(data):
     data = [ float(x) for x in data ]
     mean=avg(data)
@@ -69,6 +141,18 @@ def std_deviations(data):
     
     return std_dev
 
+"""
+calculate deviations of passed data
+
+Parameters
+----------
+data : List, mandatory
+    
+Returns
+-------
+deviations : list
+    deviations of the passed data.
+"""
 def deviations(data):
     data = [ float(x) for x in data ]
     mean=avg(data)
@@ -76,6 +160,19 @@ def deviations(data):
 
     return deviations
 
+"""
+calculate countywise_aggregate of passed data
+
+Parameters
+----------
+data : List, mandatory
+index :  int    
+
+Returns
+-------
+countywise_aggregate : float or integer depending on passed value
+    countywise_aggregate of the passed data.
+"""
 def countywise_aggregate(data,index):
     aggregate_data={} 
     for d in data:
@@ -83,6 +180,20 @@ def countywise_aggregate(data,index):
             aggregate_data[d[0]]=d[index]
     return aggregate_data
 
+
+"""
+calculate all statitics of passed data
+
+Parameters
+----------
+data : List, mandatory
+index :  int    
+
+Returns
+-------
+statitics : float or integer depending on passed value
+    statitics of the passed data.
+"""
 def stats(data):
     return [format(avg(data),'.6'),
             format(median(data),'.6'),
