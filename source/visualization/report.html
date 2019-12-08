@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module report</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>report</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cait%5Casl%5Cproject%5Cpopulation%5Csource%5Cvisualization%5Creport.py">c:\ait\asl\project\population\source\visualization\report.py</a></font></td></tr></table>
+    <p><tt>###############################################################################<br>
+&nbsp;<br>
+Visualization&nbsp;report&nbsp;publisher<br>
+-------------------------------------<br>
+Author&nbsp;:&nbsp;Santosh&nbsp;Mishra(A00278085)<br>
+Created&nbsp;on&nbsp;Mon&nbsp;Nov&nbsp;18&nbsp;12:20:01&nbsp;2019<br>
+&nbsp;<br>
+Description&nbsp;:&nbsp;This&nbsp;code&nbsp;is&nbsp;responsible&nbsp;for&nbsp;publishing&nbsp;all&nbsp;visualization&nbsp;reports<br>
+&nbsp;<br>
+###############################################################################</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-drawBoxPlot"><strong>drawBoxPlot</strong></a>(dataN, title, ylabel)</dt><dd><tt>puslish&nbsp;horizontal&nbsp;bar&nbsp;chart&nbsp;of&nbsp;passed&nbsp;data<br>
+&nbsp;<br>
+Parameters&nbsp;(all&nbsp;mandatory)<br>
+----------<br>
+dataN&nbsp;:&nbsp;Dictionary<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;value&nbsp;of&nbsp;data&nbsp;to&nbsp;be&nbsp;drawn&nbsp;on&nbsp;same&nbsp;graphs<br>
+title:&nbsp;String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;of&nbsp;the&nbsp;graph<br>
+ylabel:&nbsp;&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;axis&nbsp;labels<br>
+&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+nothing,&nbsp;just&nbsp;published&nbsp;the&nbsp;graph</tt></dd></dl>
+ <dl><dt><a name="-draw_horizontal_bar_chart"><strong>draw_horizontal_bar_chart</strong></a>(dataN, title, xlabel, ylabel, legend_label)</dt><dd><tt>puslish&nbsp;horizontal&nbsp;bar&nbsp;chart&nbsp;of&nbsp;passed&nbsp;data<br>
+&nbsp;<br>
+Parameters&nbsp;(all&nbsp;mandatory)<br>
+----------<br>
+dataN&nbsp;:&nbsp;Dictionary<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;value&nbsp;of&nbsp;data&nbsp;to&nbsp;be&nbsp;drawn&nbsp;on&nbsp;same&nbsp;graphs<br>
+title:&nbsp;String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;of&nbsp;the&nbsp;graph<br>
+xlabel:&nbsp;&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x-axis&nbsp;labels<br>
+ylabel:&nbsp;&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;axis&nbsp;labels<br>
+legend_label&nbsp;:&nbsp;List&nbsp;of&nbsp;String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;labels&nbsp;to&nbsp;be&nbsp;shown&nbsp;in&nbsp;legend<br>
+&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+nothing,&nbsp;just&nbsp;published&nbsp;the&nbsp;graph</tt></dd></dl>
+ <dl><dt><a name="-draw_line_chart"><strong>draw_line_chart</strong></a>(population_data, title, xlabel, ylabel, legend_label)</dt><dd><tt>puslish&nbsp;line&nbsp;chart&nbsp;of&nbsp;passed&nbsp;data<br>
+&nbsp;<br>
+Parameters&nbsp;(all&nbsp;mandatory)<br>
+----------<br>
+population_data&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;lince&nbsp;carts&nbsp;to&nbsp;be&nbsp;drawn&nbsp;on&nbsp;same&nbsp;graphs<br>
+title:&nbsp;String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;of&nbsp;the&nbsp;graph<br>
+xlabel:&nbsp;&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x-axis&nbsp;labels<br>
+ylabel:&nbsp;&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;axis&nbsp;labels<br>
+legend_label&nbsp;:&nbsp;List&nbsp;of&nbsp;String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;labels&nbsp;to&nbsp;be&nbsp;shown&nbsp;in&nbsp;legend<br>
+&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+nothing,&nbsp;just&nbsp;published&nbsp;the&nbsp;graph</tt></dd></dl>
+ <dl><dt><a name="-draw_pie_chart"><strong>draw_pie_chart</strong></a>(dataN, title)</dt><dd><tt>puslish&nbsp;pie&nbsp;chart&nbsp;of&nbsp;passed&nbsp;data<br>
+&nbsp;<br>
+Parameters&nbsp;(all&nbsp;mandatory)<br>
+----------<br>
+dataN&nbsp;:&nbsp;Dictionary<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;value&nbsp;of&nbsp;data&nbsp;to&nbsp;be&nbsp;drawn&nbsp;to&nbsp;be&nbsp;drawn&nbsp;on&nbsp;same&nbsp;graphs<br>
+title:&nbsp;String<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;of&nbsp;the&nbsp;graph<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+nothing,&nbsp;just&nbsp;published&nbsp;the&nbsp;graph</tt></dd></dl>
+ <dl><dt><a name="-publish"><strong>publish</strong></a>(fig, title)</dt><dd><tt>publish&nbsp;charts&nbsp;of&nbsp;passed&nbsp;figure&nbsp;with&nbsp;asked&nbsp;title<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+fig&nbsp;:&nbsp;figure,&nbsp;mandatory<br>
+title:&nbsp;String,&nbsp;mandatory<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns<br>
+-------<br>
+nothing,&nbsp;just&nbsp;published&nbsp;the&nbsp;graph</tt></dd></dl>
+</td></tr></table>
+</body></html>

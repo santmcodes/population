@@ -65,6 +65,6 @@ dbhelper.connect_create(query)
 
 #load data
 for row in reader:
-    query="INSERT INTO public.mytable3(geog_id, airo_ai_id, ed_ward, ed_ward_id, county_ud, country, totpop, male, female, popdenkm, age014t, age1524t, age2544t, age4564, aeg65p, age1564, age80p, depr, ydepr, odepr, sex_r, pc_male, pc_female, pcage014t, pcage1524t, pcage2544t, pcage4564, pcaeg65p, pcage1564, pcage80p, fert_r) 	VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    query="INSERT INTO public.mytable(geog_id, airo_ai_id, ed_ward, ed_ward_id, county_ud, country, totpop, male, female, popdenkm, age014t, age1524t, age2544t, age4564, aeg65p, age1564, age80p, depr, ydepr, odepr, sex_r, pc_male, pc_female, pcage014t, pcage1524t, pcage2544t, pcage4564, pcaeg65p, pcage1564, pcage80p, fert_r) 	VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     dbhelper.load_data(query,row)
 

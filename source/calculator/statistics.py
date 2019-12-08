@@ -2,7 +2,7 @@
 """
 ###############################################################################
 
-Database connector
+Statistics calculator
 -------------------------------------
 Author : Santosh Mishra(A00278085)
 Created on Mon Nov 18 12:20:01 2019
@@ -14,19 +14,20 @@ Description : This code is responsible for all sort of calculations used in stat
 
 from math import sqrt
 
-"""
-calculate average mean of passed data
 
-Parameters
-----------
-data : List, mandatory
-    
-Returns
--------
-average : float
-    average mean of the passed data.
-"""
 def avg(data):
+    """
+    calculate average mean of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+        
+    Returns
+    -------
+    average : float
+        average mean of the passed data.
+    """
     try:
         total=0
         for i in range(len(data)):
@@ -37,19 +38,20 @@ def avg(data):
         print("please pass list of numbers")
 
 
-"""
-calculate median of passed data
 
-Parameters
-----------
-data : List, mandatory
-    
-Returns
--------
-median : float
-    median of the passed data.
-"""
 def median(data):
+    """
+    calculate median of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+        
+    Returns
+    -------
+    median : float
+        median of the passed data.
+    """
     data.sort()
     median=0
     mid_index=int(len(data)/2)
@@ -59,34 +61,36 @@ def median(data):
         median = sum(data[mid_index-1:mid_index+1])/2
     return median
 
-"""
-calculate maximum value in a dictionary of passed data
 
-Parameters
-----------
-data : dictionary, mandatory
-    
-Returns
--------
-maximm value : float or integer depending on passed value
-"""
 def getMaximumValue(value):
+    """
+    calculate maximum value in a dictionary of passed data
+    
+    Parameters
+    ----------
+    data : dictionary, mandatory
+        
+    Returns
+    -------
+    maximm value : float or integer depending on passed value
+    """
     frequency_values=list(value.values())
     return max(frequency_values)
 
-"""
-calculate index maximum value in a dictionary of passed data
 
-Parameters
-----------
-data : dictionary, mandatory
-maximum value :  float/ int
-    
-Returns
--------
-index of maximm value : integer 
-"""
 def getMaxValIndex(value_frequency,max_value):
+    """
+    calculate index maximum value in a dictionary of passed data
+    
+    Parameters
+    ----------
+    data : dictionary, mandatory
+    maximum value :  float/ int
+        
+    Returns
+    -------
+    index of maximm value : integer 
+    """
     max_index=0
     for v in value_frequency:
         if (value_frequency[v]==max_value):
@@ -95,19 +99,20 @@ def getMaxValIndex(value_frequency,max_value):
     return max_index
 
 
-"""
-calculate mode of passed data
 
-Parameters
-----------
-data : List, mandatory
-    
-Returns
--------
-mdoe : float
-    mode of the passed data.
-"""
 def mode(data):
+    """
+    calculate mode of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+        
+    Returns
+    -------
+    mdoe : float
+        mode of the passed data.
+    """
     data=sorted(data)
     value_frequency={}
     for i in data:
@@ -121,19 +126,20 @@ def mode(data):
     
     return float(max_value_index)
 
-"""
-calculate Standard deviation of passed data
 
-Parameters
-----------
-data : List, mandatory
-    
-Returns
--------
-Standard deviation : float
-    standard deviation of the passed data.
-"""
 def std_deviations(data):
+    """
+    calculate Standard deviation of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+        
+    Returns
+    -------
+    Standard deviation : float
+        standard deviation of the passed data.
+    """
     data = [ float(x) for x in data ]
     mean=avg(data)
     deviations=[ (x - mean) ** 2 for x in data ]
@@ -141,39 +147,41 @@ def std_deviations(data):
     
     return std_dev
 
-"""
-calculate deviations of passed data
 
-Parameters
-----------
-data : List, mandatory
-    
-Returns
--------
-deviations : list
-    deviations of the passed data.
-"""
 def deviations(data):
+    """
+    calculate deviations of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+        
+    Returns
+    -------
+    deviations : list
+        deviations of the passed data.
+    """
     data = [ float(x) for x in data ]
     mean=avg(data)
     deviations=[ (x - mean) ** 2 for x in data ]
 
     return deviations
 
-"""
-calculate countywise_aggregate of passed data
 
-Parameters
-----------
-data : List, mandatory
-index :  int    
-
-Returns
--------
-countywise_aggregate : float or integer depending on passed value
-    countywise_aggregate of the passed data.
-"""
 def countywise_aggregate(data,index):
+    """
+    calculate countywise_aggregate of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+    index :  int    
+    
+    Returns
+    -------
+    countywise_aggregate : float or integer depending on passed value
+        countywise_aggregate of the passed data.
+    """    
     aggregate_data={} 
     for d in data:
         if (d[0] not in aggregate_data.keys()):
@@ -181,20 +189,21 @@ def countywise_aggregate(data,index):
     return aggregate_data
 
 
-"""
-calculate all statitics of passed data
 
-Parameters
-----------
-data : List, mandatory
-index :  int    
-
-Returns
--------
-statitics : float or integer depending on passed value
-    statitics of the passed data.
-"""
 def stats(data):
+    """
+    calculate all statitics of passed data
+    
+    Parameters
+    ----------
+    data : List, mandatory
+    index :  int    
+    
+    Returns
+    -------
+    statitics : float or integer depending on passed value
+        statitics of the passed data.
+    """
     return [format(avg(data),'.6'),
             format(median(data),'.6'),
             format(mode(data),'.6'),

@@ -15,6 +15,18 @@ import psycopg2
 from config.dbconfig import datasource
 
 def connect(query):
+    """
+    connects to database and executes the query
+    
+    Parameters
+    ----------
+    query : string, must
+    
+    Returns
+    -------
+    result : tuple
+        result of the sql query as tuples
+    """
     conn=None
     try:
         params=datasource()
@@ -33,6 +45,19 @@ def connect(query):
     return result 
 
 def load_data(query,row):
+    """
+    connects to database and executes the query to insert data
+    
+    Parameters
+    ----------
+    query : string, must
+    row: data set as list
+        
+    Returns
+    -------
+    nothing : executes and commits
+    
+    """
     conn=None
     try:
         params=datasource()
@@ -49,6 +74,18 @@ def load_data(query,row):
             print("Database connection is closed")
 
 def connect_create(query):
+    """
+    connects to database and creates the resources like tables
+    
+    Parameters
+    ----------
+    query : string, must
+        
+    Returns
+    -------
+    nothing : executes and commits
+    
+    """
     conn=None
     try:
         params=datasource()
