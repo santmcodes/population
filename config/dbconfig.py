@@ -1,14 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  4 17:27:48 2019
+###############################################################################
 
-@author:Santosh Mishra
+Database connector
+-------------------------------------
+Author : Santosh Mishra(A00278085)
+Created on Mon Nov 18 11:20:01 2019
+
+Description : This code is responsible for building data source configurations
+
+###############################################################################
 """
 
 #!/usr/bin/python
+import os
 from configparser import ConfigParser
   
-def datasource(filename='C:\AIT\ASL\project\population\config\database.ini', section='postgresql'):
+os.path.realpath('.') + "\\..\\"+ "config\database.ini"
+
+def datasource(filename=os.path.realpath('.') + "\\..\\"+ "config\database.ini", section='postgresql'):
     # create a parser
     parser = ConfigParser()
     # read config file

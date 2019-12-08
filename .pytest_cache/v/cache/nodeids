@@ -2,5 +2,9 @@
   "test/test_calculator_function.py::test_avg",
   "test/test_calculator_function.py::test_median",
   "test/test_calculator_function.py::test_mode",
-  "test/test_calculator_function.py::test_std_deviations"
+  "test/test_calculator_function.py::test_std_deviations",
+  "test/test_calculator_function.py::test_get_maximum_value",
+  "test/test_calculator_function.py::test_getMaxValIndex",
+  "test/test_calculator_function.py::test_deviations",
+  "test/test_calculator_function.py::test_countywise_aggregate"
 ]
