@@ -5,8 +5,22 @@ Created on Mon Nov  4 17:07:40 2019
 @author:Santosh Mishra
 """
 
-https://data.gov.ie/dataset/all-island-population-sa/resource/09abb272-a52a-4149-b8fc-9013d846594e?inner_span=True 
+data taken from https://data.gov.ie/dataset/all-island-population-sa/resource/09abb272-a52a-4149-b8fc-9013d846594e?inner_span=True 
+
+Steps to build and run
+	To download the project , moodle assignment link can be used or it can be also pulled from https://github.com/santmcodes/population.git
+	This project requires postgress database to be connected so that data can be stored and queried from it.  
+	Once the database has been installed you can change the database name in \conf\databse.ini. It has following configurations by default.
+[postgresql]
+host=localhost
+database=postgres
+user=postgres
+password=12shroot
+  	Based on your database you can configure here. 
+	Once the database is created , create a table named mytable.  To create the table dataloader.py can be run. This creates table and loads date into it.
+ You can also create table and inset data directly by running population.sql in data directory.
+
 
 
 # to test run
- pytest $(pwd)\\..\\test\\test_calculator_function.py
+ pytest -v $(pwd)\\..\\test\\test_calculator_function.py
